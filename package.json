@@ -1,0 +1,25 @@
+{
+  "name": "meeting-ops-automation",
+  "version": "1.0.0",
+  "description": "Google Apps Script automation for Gemini Meeting Notes → OpenAI → Sheets & Docs",
+  "private": true,
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "push": "npm run build && clasp push",
+    "deploy": "npm run build && clasp deploy",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.5.0",
+    "@types/google-apps-script": "^1.0.83",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
