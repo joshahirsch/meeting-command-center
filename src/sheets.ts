@@ -1,3 +1,4 @@
+import { SYNC_COLUMN_HEADERS } from "./actionItemSyncColumns";
 import { logInfo } from "./logger";
 
 import type {
@@ -81,6 +82,8 @@ export const HEADERS: Record<SheetTab, string[]> = {
     "Source File URL",
 
     "Recording File URL",
+
+    ...SYNC_COLUMN_HEADERS,
 
   ],
 

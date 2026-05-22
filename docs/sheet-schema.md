@@ -34,6 +34,12 @@ One row per action item.
 | Source File ID | Drive notes doc ID (Drive dedup key) |
 | Source File URL | Link to source Gemini notes doc |
 | Recording File URL | Matched recording in source folder (if any) |
+| googleTaskId | Google Tasks task ID after one-way sync (dedup) |
+| googleTaskListId | Task list ID used for sync |
+| taskSyncedAt | ISO timestamp when task was created |
+| taskSyncStatus | e.g. `synced`, `error` |
+| lastTaskSyncError | Last sync error message (cleared on success) |
+| dailyDigestIncludedAt | ISO timestamp when row appeared in a daily digest |
 
 ## Tab: Meetings
 

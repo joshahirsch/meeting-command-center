@@ -20,5 +20,6 @@ await esbuild.build({
 });
 
 copyFileSync(join(__dirname, "appsscript.json"), join(distDir, "appsscript.json"));
+copyFileSync(join(__dirname, "EntryPoints.gs"), join(distDir, "EntryPoints.gs"));
 
 console.log("Build complete: dist/Code.js");
