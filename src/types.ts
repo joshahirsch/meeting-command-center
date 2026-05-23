@@ -32,6 +32,7 @@ export interface MeetingOpsConfig {
   dailyDigestOwnerAliases: string[];
   googleTasksListName: string;
   taskSyncEnabled: boolean;
+  taskSyncAllowWeekendTest: boolean;
 }
 
 export interface ConfigKeyStatus {

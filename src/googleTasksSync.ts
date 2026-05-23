@@ -79,8 +79,14 @@ export function syncJoshActionItemsToGoogleTasks(): void {
 
   const today = new Date();
   if (!isWeekday(today)) {
-    logInfo("Skipping Google Tasks sync on weekend", {});
-    return;
+    if (!config.taskSyncAllowWeekendTest) {
+      logInfo("Skipping Google Tasks sync on weekend", {});
+      return;
+    }
+    logInfo(
+      "Running Google Tasks sync on weekend because TASK_SYNC_ALLOW_WEEKEND_TEST=true",
+      {}
+    );
   }
 
   const listName = config.googleTasksListName.trim();

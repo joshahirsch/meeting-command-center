@@ -26,6 +26,7 @@ export const CONFIG_KEYS = {
   DAILY_DIGEST_OWNER_ALIASES: "DAILY_DIGEST_OWNER_ALIASES",
   GOOGLE_TASKS_LIST_NAME: "GOOGLE_TASKS_LIST_NAME",
   TASK_SYNC_ENABLED: "TASK_SYNC_ENABLED",
+  TASK_SYNC_ALLOW_WEEKEND_TEST: "TASK_SYNC_ALLOW_WEEKEND_TEST",
 } as const;
 
 export const DEFAULTS = {
@@ -44,6 +45,7 @@ export const DEFAULTS = {
   DAILY_DIGEST_OWNER_ALIASES: "Josh,Josh Hirsch,josh@nivahealth.com",
   GOOGLE_TASKS_LIST_NAME: "Meeting Ops Actions",
   TASK_SYNC_ENABLED: false,
+  TASK_SYNC_ALLOW_WEEKEND_TEST: false,
 } as const;
 
 const REQUIRED_KEYS = [
@@ -150,6 +152,10 @@ export function loadConfig(): MeetingOpsConfig {
     googleTasksListName:
       getProp(CONFIG_KEYS.GOOGLE_TASKS_LIST_NAME) ?? DEFAULTS.GOOGLE_TASKS_LIST_NAME,
     taskSyncEnabled: getBoolProp(CONFIG_KEYS.TASK_SYNC_ENABLED, DEFAULTS.TASK_SYNC_ENABLED),
+    taskSyncAllowWeekendTest: getBoolProp(
+      CONFIG_KEYS.TASK_SYNC_ALLOW_WEEKEND_TEST,
+      DEFAULTS.TASK_SYNC_ALLOW_WEEKEND_TEST
+    ),
   };
 }
 
